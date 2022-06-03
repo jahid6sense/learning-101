@@ -7,6 +7,6 @@ module.exports = nextConfig
 
 module.exports = {
   env: {
-    customKey: 'my-value',
+    customKey: process.env.customKey,
   },
 }
