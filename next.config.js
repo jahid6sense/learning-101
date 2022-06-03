@@ -8,5 +8,6 @@ module.exports = nextConfig
 module.exports = {
   env: {
     customKey: process.env.customKey,
+    HOST: process.env.HOST
   },
 }
