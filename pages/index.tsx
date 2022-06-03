@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 const Home: NextPage = () => {
   return (
     <div>
-      Working now
+      Working now {process.env.customKey}
     </div>
   )
 }
