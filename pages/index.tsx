@@ -5,13 +5,21 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
 
-  let abc = 10
-console.log(abc)
+  let i = 10
+  console.log(i)
   console.log("in local log")
   console.error("in local error");
   console.warn("in local warn");
   console.info("in local info");
   console.debug("in local debug");
+
+  function addOne(i: any) {
+    if (i != NaN) {
+      return i++
+    } else {
+      return
+    }
+  };
 
   return (
     <div>
