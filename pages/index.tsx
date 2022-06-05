@@ -4,7 +4,10 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  console.log("in local log");
+
+  let abc = 10
+console.log(abc)
+  console.log("in local log")
   console.error("in local error");
   console.warn("in local warn");
   console.info("in local info");
