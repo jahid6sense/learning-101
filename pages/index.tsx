@@ -1,11 +1,9 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import Top from "@Components/Top";
 
 const Home: NextPage = () => {
 
-  let i = 10;
+  const i = 10;
   console.log(i);
   console.log("in local log");
   console.error("in local error");
@@ -13,13 +11,9 @@ const Home: NextPage = () => {
   console.info("in local info");
   console.debug("in local debug");
 
-
   return (
     <div>
-      <div>Working now (^.^)</div>
-      <div>Value: {process.env.customKey}</div>
-      <div>Check console: I am in {process.env.HOST}</div>
-      <div>It should show only &apos;Warn&apos;</div>
+      <Top></Top>
     </div>
   );
 };
