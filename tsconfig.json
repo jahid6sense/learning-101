@@ -1,19 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true
+    "target": "es5", //js version
+    "lib": ["dom", "dom.iterable", "esnext"], // list of built-in API
+    "allowJs": true, //accept js files as input for ts files
+    "skipLibCheck": true, // skip type checking of declaration files
+    "strict": true, //TypeScript's strict mode parameter
+    "forceConsistentCasingInFileNames": true, // file name case sensitivity
+    "noEmit": true, // not emit compiler output files like JavaScript source code
+    "esModuleInterop": true, // importing spec like: * or require('')
+    "module": "esnext", // telling TypeScript not to transpile any module syntax at all
+    "moduleResolution": "node", // process the compiler uses to figure out what an import refers to
+    "resolveJsonModule": true, // allows us to import modules with . json extension in our TypeScript files
+    "isolatedModules": true, // tells TypeScript to warn you if you write certain code that can't be correctly interpreted by a single-file transpilation process.
+    "jsx": "preserve", // allows us to use .tsx files in the project
+    "incremental": true, // tells TypeScript to save information about the project graph from the last compilation
+    "baseUrl": ".", // base url for import path
+    "paths": {
+      // paths for absolute imports
+      "@Components/*": ["Components/*"],
+      "@styles/*": ["styles/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
