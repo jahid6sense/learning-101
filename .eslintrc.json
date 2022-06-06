@@ -1,6 +1,6 @@
-// {
-//   "extends": "next/core-web-vitals"
-// }
+{
+  "extends": "next/core-web-vitals"
+}
 
 // {
 //   "plugins": ["prettier"],
@@ -12,9 +12,9 @@
 //   }
 // }
 
-{
-  "extends": "eslint:recommended",
-  "rules": {
-    "semi": [1, "always"]
-  }
-}
+// {
+//   "extends": "eslint:recommended",
+//   "rules": {
+//     "semi": [1, "always"]
+//   }
+// }
