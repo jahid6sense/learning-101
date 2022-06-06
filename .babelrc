@@ -2,8 +2,13 @@
   "presets": ["next/babel"],
   "env": {
     "production": {
-      "plugins": ["transform-remove-console"]
-      // "plugins": [ ["transform-remove-console", { "exclude": [ "error", "warn"] }] ]
+      // "plugins": ["transform-remove-console"]
+      "plugins": [["transform-remove-console", { "exclude": ["warn"] }]]
+    },
+    "staging": {
+      "plugins": [
+        ["transform-remove-console", { "exclude": ["error", "warn"] }]
+      ]
     }
   }
 }
