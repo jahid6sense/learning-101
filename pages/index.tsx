@@ -1,7 +1,5 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import Top from "@Components/Top";
 
 const Home: NextPage = () => {
 
@@ -16,10 +14,7 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <div>Working now (^.^)</div>
-      <div>Value: {process.env.customKey}</div>
-      <div>Check console: I am in {process.env.HOST}</div>
-      <div>It should show only &apos;Warn&apos;</div>
+      <Top></Top>
     </div>
   );
 };
