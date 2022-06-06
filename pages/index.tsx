@@ -19,8 +19,7 @@ const Home: NextPage = () => {
       <div>Working now (^.^)</div>
       <div>Value: {process.env.customKey}</div>
       <div>Check console: I am in {process.env.HOST}</div>
-      <div>For beta, it should show &apos;Error&apos; and &apos;Warn&apos;</div>
-      <div>For Live, it should show only &apos;Warn&apos;</div>
+      <div>It should show only &apos;Error&apos; and &apos;Warn&apos;</div>
     </div>
   );
 };
