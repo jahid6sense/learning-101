@@ -21,15 +21,15 @@ const index = (props: any) => {
     );
 };
 
-// export default index;
+export default index;
 
 // @ts-ignore
-const mapStateToProps = state => ({
-    userStatus: state.main
-  })
+// const mapStateToProps = state => ({
+//     userStatus: state.main
+//   })
   
-  const mapDispatchToProps = {
-    setStatus: cookieActions.putIt,
-  }
+//   const mapDispatchToProps = {
+//     setStatus: cookieActions.putIt,
+//   }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(index)
+//   export default connect(mapStateToProps, mapDispatchToProps)(index)
