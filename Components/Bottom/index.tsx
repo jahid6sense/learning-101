@@ -11,12 +11,20 @@ const index = (props: any) => {
     return (
         <div>
             <button
+            style={{ 
+                marginBottom:"5rem",
+                background: "green",
+                color: "white",
+                cursor:"pointer",
+                padding:"1rem"
+            }}
                 onClick={() => {
                     //@ts-ignore
                     // dispatch(cookieActions.putIt('I am here'))
-                    setStatus('I am here')
+                    // setStatus('I am here')
+                    throw new Error("I am error to show in sentry");
                 }}
-            >Click me</button>
+            >Click me I am error</button>
         </div>
     );
 };
