@@ -1,4 +1,5 @@
-import {combineReducers} from "redux";
+// @ts-ignore
+import { combineReducers } from "redux";
 import main from "./main";
 
 const root = combineReducers({

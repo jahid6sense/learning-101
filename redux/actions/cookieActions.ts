@@ -1,12 +1,10 @@
 import CookieHelper from "helpers/CookieHelper";
-import {REMOVE} from "redux/types";
+import {PUT, REMOVE} from "redux/types";
 
 class cookieActions {
-  putIt = (status: string) => (dispatch: any) => {
-    return (dispatch: any) => {
-      CookieHelper.setCookie(status, "I am here");
-      dispatch({type: REMOVE});
-    };
+  putIt = (status: any) => (dispatch: any) => {
+    CookieHelper.setCookie("status", status);
+    dispatch({type: PUT, payload: status});
   };
 
   removeIt = () => {
