@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Top from "@Components/Top";
+import Bottom from "@Components/Bottom";
 
 const Home: NextPage = () => {
 
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Top></Top>
+      <Bottom></Bottom>
     </div>
   );
 };
