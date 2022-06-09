@@ -1,6 +1,8 @@
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
 import * as Sentry from '@sentry/nextjs';
+import { Provider } from "react-redux";
+import store from "redux/store";
 
 
 process.env.NODE_ENV === "production" &&
@@ -11,7 +13,11 @@ process.env.NODE_ENV === "production" &&
 
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider >
+  )
 }
 
 export default MyApp;

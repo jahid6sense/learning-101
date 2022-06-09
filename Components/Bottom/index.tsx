@@ -22,22 +22,22 @@ const index = (props: any) => {
                     //@ts-ignore
                     // dispatch(cookieActions.putIt('I am here'))
                     // setStatus('I am here')
-                    throw new Error("I am error to show in sentry");
+                    // throw new Error("I am error to show in sentry");
                 }}
             >Click me I am error</button>
         </div>
     );
 };
 
-export default index;
+// export default index;
 
 // @ts-ignore
-// const mapStateToProps = state => ({
-//     userStatus: state.main
-//   })
+const mapStateToProps = state => ({
+    userStatus: state.main
+  })
   
-//   const mapDispatchToProps = {
-//     setStatus: cookieActions.putIt,
-//   }
+  const mapDispatchToProps = {
+    setStatus: cookieActions.putIt,
+  }
   
 //   export default connect(mapStateToProps, mapDispatchToProps)(index)
