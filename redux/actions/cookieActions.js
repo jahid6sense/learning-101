@@ -2,13 +2,19 @@ import CookieHelper from "helpers/CookieHelper";
 import {PUT, REMOVE} from "redux/types";
 
 class cookieActions {
-  putIt = (status: any) => (dispatch: any) => {
+  try = () => {
+    return {
+      type: PUT,
+    };
+  };
+
+  putIt = (status) => (dispatch) => {
     CookieHelper.setCookie("status", status);
     dispatch({type: PUT, payload: status});
   };
 
   removeIt = () => {
-    return (dispatch: any) => {
+    return (dispatch) => {
       CookieHelper.removeCookie("status");
       dispatch({type: REMOVE});
     };

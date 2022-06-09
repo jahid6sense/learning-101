@@ -1,6 +1,10 @@
 import {PUT, REMOVE} from "redux/types";
 
-const main = (state = {status: null}, action: any) => {
+const initialState = {
+  status: null,
+};
+
+const main = (state = initialState, action) => {
   switch (action.type) {
     case PUT:
       return {...state, status: action.payload};
