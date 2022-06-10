@@ -1,15 +1,20 @@
-import {PUT, REMOVE} from "redux/types";
+import {PUT, REMOVE, SETUSER, OUT} from "redux/types";
 
 const initialState = {
-  status: null,
+  status: 1,
+  name: "",
 };
 
 const main = (state = initialState, action) => {
   switch (action.type) {
     case PUT:
-      return {...state, status: action.payload};
+      return {...state, status: state.status + action.payload};
     case REMOVE:
-      return {status: null};
+      return {...state, status: 0};
+    case SETUSER:
+      return {...state, name: action.payload};
+    case OUT:
+      return {...state, name: null};
     default:
       return state;
   }

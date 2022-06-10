@@ -4,8 +4,6 @@ import Bottom from "@Components/Bottom";
 
 const Home: NextPage = () => {
 
-  const i = 10;
-  console.log(i);
   console.log("in local log");
   console.error("in local error");
   console.warn("in local warn");
