@@ -1,9 +1,8 @@
-import type { AppProps } from "next/app";
+import type {AppProps} from "next/app";
 import "../styles/globals.css";
-import * as Sentry from '@sentry/nextjs';
-import { Provider } from "react-redux";
+import * as Sentry from "@sentry/nextjs";
+import {Provider} from "react-redux";
 import store from "redux/store";
-
 
 process.env.NODE_ENV === "production" &&
   Sentry.init({
@@ -11,13 +10,12 @@ process.env.NODE_ENV === "production" &&
     tracesSampleRate: 1.0,
   });
 
-
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({Component, pageProps}: AppProps) {
   return (
     <Provider store={store}>
       <Component {...pageProps} />
-    </Provider >
-  )
+    </Provider>
+  );
 }
 
 export default MyApp;
