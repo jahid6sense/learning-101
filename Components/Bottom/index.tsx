@@ -1,43 +1,122 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import {connect} from "react-redux";
+// import {gg} from "redux/actions/cookieActions";
 // import { useDispatch } from 'react-redux';
-import cookieActions from 'redux/actions/cookieActions';
+import cookieActions from "redux/actions/cookieActions";
 
 const index = (props: any) => {
+  console.log(props);
 
-    const { userStatus, setStatus } = props;
-    // const dispatch = useDispatch();
-
-    return (
-        <div>
-            <button
-            style={{ 
-                marginBottom:"5rem",
-                background: "green",
-                color: "white",
-                cursor:"pointer",
-                padding:"1rem"
-            }}
-                onClick={() => {
-                    //@ts-ignore
-                    // dispatch(cookieActions.putIt('I am here'))
-                    // setStatus('I am here')
-                    throw new Error("I am error to show in sentry");
-                }}
-            >Click me I am error</button>
-        </div>
+  const getUserData = () => {
+    cookieActions.getData(
+      (success: any) => {
+        console.log(success);
+        props.setUser(success[0].name);
+      },
+      (error: any) => {
+        console.error(error);
+      }
     );
+  };
+
+  return (
+    <div>
+      <button
+        style={{
+          marginBottom: "5rem",
+          background: "Red",
+          color: "white",
+          cursor: "pointer",
+          padding: "1rem",
+        }}
+        onClick={() => {
+          throw new Error("I am error to show in sentry");
+        }}
+      >
+        Click me I am error
+      </button>
+
+      <button
+        style={{
+          marginBottom: "5rem",
+          marginLeft: "1rem",
+          background: "green",
+          color: "white",
+          cursor: "pointer",
+          padding: "1rem",
+        }}
+        onClick={() => {
+          props.putIt();
+        }}
+      >
+        Click me I am from REDUX ({props.status})
+      </button>
+
+      <button
+        style={{
+          marginBottom: "5rem",
+          marginLeft: "1rem",
+          background: "green",
+          color: "white",
+          cursor: "pointer",
+          padding: "1rem",
+        }}
+        onClick={() => {
+          props.removeGg();
+        }}
+      >
+        Reset
+      </button>
+
+      <button
+        style={{
+          marginBottom: "5rem",
+          marginLeft: "1rem",
+          background: "gray",
+          color: "white",
+          cursor: "pointer",
+          padding: "1rem",
+        }}
+        onClick={() => {
+          getUserData();
+        }}
+      >
+        See user name in cookie
+      </button>
+
+      <button
+        style={{
+          marginBottom: "5rem",
+          marginLeft: "1rem",
+          background: "gray",
+          color: "white",
+          cursor: "pointer",
+          padding: "1rem",
+        }}
+        onClick={() => {
+          props.outUser();
+        }}
+      >
+        Out User ({props.name})
+      </button>
+    </div>
+  );
 };
 
-export default index;
+const mapStateToProps = (state: any) => {
+  return {
+    status: state.main.status,
+    name: state.main.name,
+  };
+};
 
-// @ts-ignore
-// const mapStateToProps = state => ({
-//     userStatus: state.main
-//   })
-  
-//   const mapDispatchToProps = {
-//     setStatus: cookieActions.putIt,
-//   }
-  
-//   export default connect(mapStateToProps, mapDispatchToProps)(index)
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    putIt: () => dispatch(cookieActions.putIt()),
+    removeGg: () => dispatch(cookieActions.removeIt()),
+    setUser: (name: any) => dispatch(cookieActions.setUser(name)),
+    outUser: () => dispatch(cookieActions.outUser()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(index);

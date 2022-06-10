@@ -21,6 +21,6 @@
       "@styles/*": ["styles/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "redux/reducers/main.js", "redux/reducers/root.js", "redux/store.js", "redux/types.js", "redux/actions/cookieActions.js"],
   "exclude": ["node_modules"]
 }
