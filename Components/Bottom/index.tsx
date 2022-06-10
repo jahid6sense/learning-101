@@ -29,7 +29,7 @@ const index = (props: any) => {
     );
 };
 
-// export default index;
+export default index;
 
 // @ts-ignore
 const mapStateToProps = state => ({
