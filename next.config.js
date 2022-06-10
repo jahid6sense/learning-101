@@ -9,5 +9,6 @@ module.exports = {
   env: {
     customKey: process.env.customKey,
     HOST: process.env.HOST,
+    BASEURL: process.env.BASEURL,
   },
 };
