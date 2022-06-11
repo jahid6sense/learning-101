@@ -4,6 +4,7 @@ import cookie from "js-cookie";
 class CookieHelper {
     
   setCookie = (key: any, value: any) => {
+    console.log(key, value);
     if (process.browser) {
       cookie.set(key, value, {
         expires: 1,

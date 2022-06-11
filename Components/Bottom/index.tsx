@@ -11,7 +11,8 @@ const index = (props: any) => {
     cookieActions.getData(
       (success: any) => {
         console.log(success);
-        props.setUser(success[0].name);
+        const rng = Math.floor(Math.random() * 10);
+        props.setUser(success[rng].name);
       },
       (error: any) => {
         console.error(error);
