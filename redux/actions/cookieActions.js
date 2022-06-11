@@ -1,9 +1,6 @@
 import userData from "../../Api/userData";
 import CookieHelper from "helpers/CookieHelper";
 import {PUT, REMOVE, OUT, SETUSER} from "redux/types";
-import {useDispatch} from "react-redux";
-
-const dispatch = useDispatch;
 
 class cookieActions {
   putIt = (number = 1) => {
