@@ -2,7 +2,6 @@
 import cookie from "js-cookie";
 
 class CookieHelper {
-    
   setCookie = (key: any, value: any) => {
     console.log(key, value);
     if (process.browser) {
@@ -11,6 +10,10 @@ class CookieHelper {
         path: "/",
       });
     }
+  };
+
+  getCookieFromBrowser = (key: any) => {
+    return cookie.get(key);
   };
 
   removeCookie = (key: any) => {
