@@ -31,7 +31,7 @@ const index = (props: any) => {
           padding: "1rem",
         }}
         onClick={() => {
-          throw new Error("I am error to show in sentry");
+          throw new Error("I am error to show in error tools");
         }}
       >
         Click me I am error
