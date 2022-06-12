@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Top from "@Components/Top";
 import Bottom from "@Components/Bottom";
+import AppLayout from "layout/layout";
 
 const Home: NextPage = () => {
 
@@ -11,10 +12,10 @@ const Home: NextPage = () => {
   console.debug("in local debug");
 
   return (
-    <div>
+    <AppLayout>
       <Top></Top>
       <Bottom></Bottom>
-    </div>
+    </AppLayout>
   );
 };
 
