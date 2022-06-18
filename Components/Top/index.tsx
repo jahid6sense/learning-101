@@ -1,8 +1,18 @@
 import React from "react";
 import TryCss from "@styles/Try.module.css";
 import topCss from "./index.module.css";
+import Image from "next/image";
+import img3mb from "@public/images/3mb.jpg";
+import img10mb from "@public/images/10mb.jpg";
+import img11mb from "@public/images/11mb.jpg";
+import img12mb from "@public/images/12mb.jpg";
+
 
 const index = () => {
+  const myLoader = ({ src }: any) => {
+    return `https://miro.medium.com/max/1400/1*N_A8rlei1cfYHPVK856wXw.png`
+  }
+
   return (
     <div>
       <div>Working now (^.^)</div>
@@ -14,13 +24,61 @@ const index = () => {
         It should show only &apos;Warn&apos;
       </div>
       <br />
-      {/* <div>Go to <a href="">s{process.env.Host}</a></div> */}
-      <img
-        className={topCss.img}
-        src="https://assets.entrepreneur.com/content/3x2/2000/20160628101609-Coding.jpeg"
-        alt="https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2020/10/29/Pictures/_263cb176-19bf-11eb-aaf6-cc648d414a4d.jpg"
-      />
-    </div>
+
+      <div
+      // style={{ display: 'flex' }}
+      >
+        <div>
+          <b>This is 3mb+ pic (not optimized)</b>
+          <img
+            className={topCss.img}
+            src="/images/3mb.jpg"
+          />
+        </div>
+
+        <div>
+          <b>This is 3mb+ pic (optimized) eager</b>
+          <Image
+            // loader={myLoader}
+            loading='eager'
+            quality={25}
+            src={img3mb}
+          />
+          <b>This is 10mb+ pic (optimized) lazy</b>
+          <Image
+            quality={50}
+            src={img10mb}
+          />
+          <b>This is 11mb+ pic (optimized) lazy</b>
+          <Image
+            src={img11mb}
+            quality={75}
+          />
+
+          <b>This is 12mb+ pic (optimized) eager</b>
+          <div
+            style={{ display: 'flex' }}
+          >
+            <div>
+              <Image
+                loading='eager'
+                quality={100}
+                src={img12mb}
+              />
+            </div>
+
+            <div>
+              <img
+                className={topCss.img}
+                src="/images/12mb.jpg"
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div >
   );
 };
 

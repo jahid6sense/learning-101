@@ -1,0 +1,13 @@
+.mainDiv {
+  /* display: flex; */
+}
+
+.text {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.imageDiv {
+    position: absolute;
+    z-index: -1;
+}

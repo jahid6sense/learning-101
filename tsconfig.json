@@ -18,7 +18,9 @@
     "paths": {
       // paths for absolute imports
       "@Components/*": ["Components/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@public/*": ["public/*"],
+      "@Model/*": ["Model/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "redux/reducers/main.js", "redux/reducers/root.js", "redux/store.js", "redux/types.js", "redux/actions/cookieActions.js"],
