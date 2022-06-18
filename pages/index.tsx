@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Top from "@Components/Top";
 import Bottom from "@Components/Bottom";
 import AppLayout from "layout/layout";
+import Bottom2 from "@Components/Bottom2";
 
 const Home: NextPage = () => {
 
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
     <AppLayout>
       <Top></Top>
       <Bottom></Bottom>
+      <Bottom2></Bottom2>
     </AppLayout>
   );
 };
