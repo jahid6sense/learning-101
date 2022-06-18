@@ -3,7 +3,7 @@ import Image from "next/image";
 import img3mb from "@public/images/3mb.jpg";
 import Bottom2 from "./index.module.css";
 import cookieActions from 'redux/actions/cookieActions';
-import { UserModel } from 'Model/userModel';
+import { UserModel } from '@Model/UserModel';
 
 
 
