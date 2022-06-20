@@ -6,7 +6,7 @@ import img3mb from "@public/images/3mb.jpg";
 import img10mb from "@public/images/10mb.jpg";
 import img11mb from "@public/images/11mb.jpg";
 import img12mb from "@public/images/12mb.jpg";
-
+import Link from 'next/link';
 
 const index = () => {
   const myLoader = ({ src }: any) => {
@@ -15,6 +15,17 @@ const index = () => {
 
   return (
     <div>
+
+      <div className="mb-12 mt-4">
+        <h1 className="text-3xl font-bold underline bg-green-300">
+          Hello, I am from Tailwind Css
+        </h1>
+
+        <Link href="/tailwind">
+          <a className="text-2xl font-bold underline text-blue-700">Explore Tailwind Css</a>
+        </Link>
+      </div>
+
       <div>Working now (^.^)</div>
       <div className={topCss.blueColor}>Value: {process.env.customKey}</div>
       <div className={topCss.bgGold}>
