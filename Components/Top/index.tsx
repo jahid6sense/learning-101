@@ -22,11 +22,16 @@ const index = () => {
         </h1>
 
         <Link href="/tailwind">
-          <a className="text-2xl font-bold underline text-blue-700">Explore Tailwind Css</a>
+          <a className="text-2xl font-bold underline text-gray-900">Explore Tailwind Css</a>
         </Link>
       </div>
 
+      <Link href="/tomtomMap">
+        <a className="text-2xl font-bold underline text-blue-700">Tomtom Map</a>
+      </Link>
+
       <div>Working now (^.^)</div>
+
       <div className={topCss.blueColor}>Value: {process.env.customKey}</div>
       <div className={topCss.bgGold}>
         Check console: I am in {process.env.HOST}
