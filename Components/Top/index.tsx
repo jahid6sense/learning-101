@@ -26,9 +26,17 @@ const index = () => {
         </Link>
       </div>
 
-      <Link href="/tomtomMap">
-        <a className="text-2xl font-bold underline text-blue-700">Tomtom Map</a>
-      </Link>
+      <div className="mb-12 mt-4">
+        <Link href="/googleMap">
+          <a className="text-2xl font-bold underline text-blue-700">Google Map</a>
+        </Link>
+      </div>
+
+      <div className="mb-12 mt-4">
+        <Link href="/tomtomMap">
+          <a className="text-2xl font-bold underline text-blue-700">Tomtom Map</a>
+        </Link>
+      </div>
 
       <div>Working now (^.^)</div>
 

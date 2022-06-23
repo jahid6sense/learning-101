@@ -1,10 +1,9 @@
 // import {useRef, useEffect, useState} from "react";
-// import * as tt from "@tomtom-international/web-sdk-maps";
-// import * as ttapi from "@tomtom-international/web-sdk-services";
+// // import * as tt from "@tomtom-international/web-sdk-maps";
+// // import * as ttapi from "@tomtom-international/web-sdk-services";
 // import "@tomtom-international/web-sdk-maps/dist/maps.css";
 
 // const TomtomMap = () => {
-
 //   const mapElement = useRef();
 //   const [map, setMap] = useState({});
 //   const [longitude, setLongitude] = useState(-0.112869);
@@ -48,7 +47,10 @@
 //       .addTo(map);
 //   };
 
-//   useEffect(() => {
+//   useEffect(async () => {
+//     const tt = await import("@tomtom-international/web-sdk-maps");
+//     const ttapi = await import("@tomtom-international/web-sdk-services");
+
 //     const origin = {
 //       lng: longitude,
 //       lat: latitude,
@@ -58,6 +60,7 @@
 //     let map = tt.map({
 //       key: process.env.TomTomKey,
 //       container: mapElement.current,
+//       // container: 'map',
 //       stylesVisibility: {
 //         trafficIncidents: true,
 //         trafficFlow: true,
@@ -97,7 +100,7 @@
 //         return convertToPoints(destination);
 //       });
 //       const callParameters = {
-//         key: process.env.REACT_APP_TOM_TOM_API_KEY,
+//         key: process.env.TomTomKey,
 //         destinations: pointsForDestinations,
 //         origins: [convertToPoints(origin)],
 //       };
@@ -130,7 +133,7 @@
 
 //         ttapi.services
 //           .calculateRoute({
-//             key: process.env.REACT_APP_TOM_TOM_API_KEY,
+//             key: process.env.TomTomKey,
 //             locations: sorted,
 //           })
 //           .then((routeData) => {
@@ -154,6 +157,7 @@
 //       {map && (
 //         <div className="app">
 //           <div ref={mapElement} className="map" />
+
 //           <div className="search-bar">
 //             <h1>Where to?</h1>
 //             <input
@@ -183,20 +187,17 @@
 
 // export default TomtomMap;
 
-// import tt from "@tomtom-international/web-sdk-maps";
-// import React, {useEffect} from "react";
-
+import React, {useEffect, useRef, useState} from "react";
 
 const TomtomMap = () => {
   const mapElement = useRef();
   const [map, setMap] = useState({});
 
-  useEffect(() => {
-const {tt} = await import("@tomtom-international/web-sdk-maps");
+  useEffect(async () => {
+    const tt = await import("@tomtom-international/web-sdk-maps");
 
     let map = tt.map({
       key: process.env.TomTomKey,
-      // container: "map",
       container: mapElement.current,
     });
 
@@ -205,7 +206,10 @@ const {tt} = await import("@tomtom-international/web-sdk-maps");
 
   return (
     <div>
-      <div>fas</div>
+      <h1>Tomtom Map</h1>
+      <a href="/">
+        <button className="text-blue-600 text-xl">Home</button>
+      </a>
 
       <div ref={mapElement}></div>
     </div>

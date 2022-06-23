@@ -14,5 +14,6 @@ module.exports = {
     HOST: process.env.HOST,
     BASEURL: process.env.BASEURL,
     TomTomKey: process.env.TomTomKey,
+    googleMapsKey: process.env.googleMapsKey,
   },
 };
