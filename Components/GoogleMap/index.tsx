@@ -23,7 +23,6 @@ const index = () => {
 
   const houseArr = useMemo(() => generateHouses(myPosition), [myPosition]);
 
-  const myPositionIcon = <img src="/images/3mb" />;
 
   return (
     <div>
@@ -38,7 +37,7 @@ const index = () => {
         longitude={longitude}
         myPosition={myPosition}
         houseArr={houseArr}
-        myPositionIcon={myPositionIcon}
+        myPositionIcon={"/images/3mb.jpg"}
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.googleMapsKey}&v=3.exp&libraries=geometry,drawing,places`}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `400px` }} />}

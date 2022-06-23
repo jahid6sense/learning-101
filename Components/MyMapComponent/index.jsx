@@ -41,7 +41,7 @@ const MyMapComponent = withScriptjs(
   withGoogleMap((props) => (
     <GoogleMap defaultZoom={14} defaultCenter={props.myPosition}>
       {props.isMarkerShown && (
-        <Marker icon={"/images/3mb.jpg"} position={props.myPosition} />
+        <Marker icon={props.myPositionIcon} position={props.myPosition} />
       )}
 
       <Circle center={props.myPosition} radius={1000} options={closeOptions} />
