@@ -12,9 +12,8 @@ const index = () => {
   const [latitude, setLatitude] = useState(23.760397389753912);
   const [longitude, setLongitude] = useState(90.43607491287335);
   const [directions, setDirections] = useState<DirectionsResult>();
-
-
-  const [myPosition, setMyPosition] = useState({ lat: latitude, lng: longitude })
+  const [office, setOffice] = useState<LatLngLiteral>();
+  const [myPosition, setMyPosition] = useState<LatLngLiteral>({ lat: latitude, lng: longitude })
 
   const generateHouses = (position = myPosition) => {
     const houses = [];
@@ -57,6 +56,7 @@ const index = () => {
       </a>
 
       <h1>Commute?</h1>
+      <h1>{JSON.stringify(myPosition)}</h1>
       <Places
         setOffice={(position: any) => {
           setMyPosition(position);
@@ -70,6 +70,7 @@ const index = () => {
         longitude={longitude}
         myPosition={myPosition}
         houseArr={houseArr}
+        mapRef={mapRef}
         fetchDirections={fetchDirections}
         directions={directions}
         myPositionIcon={"/images/hereMan2.png"}
