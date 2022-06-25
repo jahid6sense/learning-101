@@ -64,6 +64,7 @@ const index = () => {
         }}
       />
 
+
       <MyMapComponent
         isMarkerShown
         latitude={latitude}
