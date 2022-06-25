@@ -1,11 +1,15 @@
+import {useState} from "react";
 import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
   Marker,
   Circle,
-  MarkerClusterer,
+  DirectionsRenderer,
 } from "react-google-maps";
+const {
+  MarkerClusterer,
+} = require("react-google-maps/lib/components/addons/MarkerClusterer");
 
 const defaultOptions = {
   strokeOpacity: 0.5,
@@ -37,9 +41,24 @@ const farOptions = {
   fillColor: "#FF5252",
 };
 
+
 const MyMapComponent = withScriptjs(
   withGoogleMap((props) => (
     <GoogleMap defaultZoom={14} defaultCenter={props.myPosition}>
+
+      {props.directions && (
+        <DirectionsRenderer
+          directions={props.directions}
+          options={{
+            polylineOptions: {
+              zIndex: 50,
+              strokeColor: "#1976D2",
+              strokeWeight: 5,
+            },
+          }}
+        />
+      )}
+
       {props.isMarkerShown && (
         <Marker icon={props.myPositionIcon} position={props.myPosition} />
       )}
@@ -48,13 +67,17 @@ const MyMapComponent = withScriptjs(
       <Circle center={props.myPosition} radius={2000} options={middleOptions} />
       <Circle center={props.myPosition} radius={3000} options={farOptions} />
 
-      {/* <MarkerClusterer>
-        {(clusterer) => */}
-      {props?.houseArr.map((house) => (
-        <Marker key={house.lat} position={house} onClick={() => {}} />
-      ))}
-      {/* }
-      </MarkerClusterer> */}
+      <MarkerClusterer>
+        {props?.houseArr.map((house) => (
+          <Marker
+            key={house.lat}
+            position={house}
+            onClick={() => {
+              props.fetchDirections(house);
+            }}
+          />
+        ))}
+      </MarkerClusterer>
     </GoogleMap>
   ))
 );
