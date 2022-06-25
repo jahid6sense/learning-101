@@ -6,6 +6,9 @@ import {
   Marker,
   Circle,
   DirectionsRenderer,
+  StreetViewPanorama,
+  OverlayView,
+  InfoWindow,
 } from "react-google-maps";
 import StandaloneSearchBox from "react-google-maps/lib/components/places/StandaloneSearchBox";
 const {
@@ -45,63 +48,14 @@ const farOptions = {
   fillColor: "#FF5252",
 };
 
+
 const MyMapComponent = withScriptjs(
   withGoogleMap((props) => (
-    <GoogleMap 
-    defaultZoom={14} 
-    defaultCenter={props.myPosition}
-    ref={props.mapRef}
-    >
-      
-      {/* <SearchBox
-        ref={props.onSearchBoxMounted}
-        bounds={props.bounds}
-        controlPosition={google.maps.ControlPosition.TOP_LEFT}
-        onPlacesChanged={props.onPlacesChanged}
-      >
-        <input
-          type="text"
-          placeholder="Customized your placeholder"
-          style={{
-            boxSizing: `border-box`,
-            border: `1px solid transparent`,
-            width: `240px`,
-            height: `32px`,
-            marginTop: `27px`,
-            padding: `0 12px`,
-            borderRadius: `3px`,
-            boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
-            fontSize: `14px`,
-            outline: `none`,
-            textOverflow: `ellipses`,
-          }}
-        />
-      </SearchBox> */}
-      {/* <SearchBox
+    <GoogleMap
+      defaultZoom={14}
+      defaultCenter={props.myPosition}
       ref={props.mapRef}
-      bounds={props.bounds}
-      controlPosition={google.maps.ControlPosition.TOP_LEFT}
-      onPlacesChanged={props.onPlacesChanged}
-      >
-      <input
-          type="text"
-          placeholder="Customized your placeholder"
-          style={{
-            boxSizing: `border-box`,
-            border: `1px solid transparent`,
-            width: `240px`,
-            height: `32px`,
-            marginTop: `27px`,
-            padding: `0 12px`,
-            borderRadius: `3px`,
-            boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
-            fontSize: `14px`,
-            outline: `none`,
-            textOverflow: `ellipses`,
-          }}
-        />
-      </SearchBox> */}
-
+    >
       {props.directions && (
         <DirectionsRenderer
           directions={props.directions}
