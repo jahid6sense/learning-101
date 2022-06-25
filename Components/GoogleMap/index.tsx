@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import MyMapComponent from "@Components/MyMapComponent";
 import { GoogleMap } from 'react-google-maps';
 import Places from './places';
@@ -29,6 +29,7 @@ const index = () => {
   };
 
   const houseArr = useMemo(() => generateHouses(myPosition), [myPosition]);
+  const onLoad = useCallback((map: any) => (mapRef.current = map), []);
 
   const fetchDirections = (house: LatLngLiteral) => {
     if (!myPosition) return;
@@ -57,6 +58,7 @@ const index = () => {
 
       <h1>Commute?</h1>
       <h1>{JSON.stringify(myPosition)}</h1>
+      
       <Places
         setOffice={(position: any) => {
           setMyPosition(position);
@@ -72,6 +74,7 @@ const index = () => {
         myPosition={myPosition}
         houseArr={houseArr}
         mapRef={mapRef}
+        onLoad={onLoad}
         fetchDirections={fetchDirections}
         directions={directions}
         myPositionIcon={"/images/hereMan2.png"}

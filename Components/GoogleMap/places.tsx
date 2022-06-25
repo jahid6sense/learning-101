@@ -11,6 +11,7 @@ import {
     // @ts-ignore
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
+import { useEffect } from "react";
 
 type PlacesProps = {
     setOffice: (position: google.maps.LatLngLiteral) => void;
@@ -21,12 +22,17 @@ export default function Places({ setOffice }: PlacesProps) {
         ready,
         value,
         setValue,
-        suggestions: { status, data },
+        // suggestions: { status, data },
+        suggestions,
         clearSuggestions,
     } = usePlacesAutocomplete();
 
-    console.log(ready);
-    console.log(usePlacesAutocomplete());
+    const { status, data } = suggestions;
+    // console.log(data);
+
+    useEffect(() => {
+        console.log(data);
+    }, [data])
 
     const handleSelect = async (val: any) => {
         // const handleSelect = async () => {
@@ -49,24 +55,27 @@ export default function Places({ setOffice }: PlacesProps) {
         <>
             <Combobox
                 onSelect={handleSelect}
+                style={{ zIndex: "10000 !important" }}
             // onBlur={() => { handleSelect }}
             >
                 <ComboboxInput
+                    style={{ zIndex: "10000 !important" }}
                     value={value}
                     onChange={(e: any) => {
                         setValue(e.target.value)
-                        console.log(e)
                     }}
                     // disabled={!ready}
                     className="combobox-input mb-10"
                     placeholder="Search office address"
                 />
-                <ComboboxPopover>
-                    <ComboboxList>
-                        {status === "OK" &&
-                            data.map(({ place_id, description }: any) => (
-                                <ComboboxOption key={place_id} value={description} />
-                            ))}
+                <ComboboxPopover style={{ zIndex: "10000 !important" }}>
+                    <ComboboxList style={{ zIndex: "10000 !important" }}>
+                        {/* status === "OK" && */}
+                        {data?.map(({ place_id, description }: any) => (
+                            <ComboboxOption
+                                style={{ zIndex: "10000 !important" }}
+                                key={place_id} value={description} />
+                        ))}
                     </ComboboxList>
                 </ComboboxPopover>
             </Combobox>
