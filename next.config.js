@@ -10,5 +10,7 @@ module.exports = {
     customKey: process.env.customKey,
     HOST: process.env.HOST,
     BASEURL: process.env.BASEURL,
+    TomTomKey: process.env.TomTomKey,
+    googleMapsKey: process.env.googleMapsKey,
   },
 };

@@ -23,6 +23,6 @@
       "@Model/*": ["Model/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "redux/reducers/main.js", "redux/reducers/root.js", "redux/store.js", "redux/types.js", "redux/actions/cookieActions.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "redux/reducers/main.js", "redux/reducers/root.js", "redux/store.js", "redux/types.js", "redux/actions/cookieActions.js", "Components/TomtomMap/TomtomMap.jsx", "helpers/GoogleMapHelper.jsx", "Components/MyMapComponent/index.jsx"],
   "exclude": ["node_modules"]
 }
