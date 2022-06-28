@@ -6,6 +6,9 @@ import store from "redux/store";
 import Bugsnag from '@bugsnag/js'
 import CookieHelper from "helpers/CookieHelper";
 import AppLayout from "layout/layout";
+import 'antd/dist/antd.css';
+import '../pages/swapBtn/SwipeableButton.css';
+
 // import rg4js from 'raygun4js';
 // var rg4js = require('raygun4js');
 

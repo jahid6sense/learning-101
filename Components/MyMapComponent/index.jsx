@@ -55,6 +55,7 @@ const MyMapComponent = withScriptjs(
       defaultZoom={14}
       defaultCenter={props.myPosition}
       ref={props.mapRef}
+      onLoad={props.onLoad}
     >
       {props.directions && (
         <DirectionsRenderer

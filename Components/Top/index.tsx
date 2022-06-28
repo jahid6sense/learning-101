@@ -38,6 +38,12 @@ const index = () => {
         </Link>
       </div>
 
+      <div className="mb-4 mt-4">
+        <Link href="/swapBtn">
+          <a className="text-2xl font-bold underline text-blue-700">Swap button here</a>
+        </Link>
+      </div>
+
       <div>Working now (^.^)</div>
 
       <div className={topCss.blueColor}>Value: {process.env.customKey}</div>
