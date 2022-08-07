@@ -1,8 +1,10 @@
 import type {AppProps} from "next/app";
 import "../styles/globals.css";
+import "../styles/globals.css";
 import * as Sentry from "@sentry/nextjs";
 import {Provider} from "react-redux";
 import store from "redux/store";
+import {motion} from "framer-motion";
 
 process.env.NODE_ENV === "production" &&
   Sentry.init({
@@ -10,11 +12,18 @@ process.env.NODE_ENV === "production" &&
     tracesSampleRate: 1.0,
   });
 
-function MyApp({Component, pageProps}: AppProps) {
+function MyApp({Component, pageProps, router}: AppProps) {
   return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
+    <motion.div
+      key={router.route}
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      transition={{duration: 0.5}}
+    >
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    </motion.div>
   );
 }
 
