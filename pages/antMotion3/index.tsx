@@ -14,7 +14,6 @@ const index = () => {
       >
         Click
       </button>
-
       <TweenOne animation={{ x:100 }} />
     </div>
   );
