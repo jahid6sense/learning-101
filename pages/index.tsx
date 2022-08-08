@@ -4,6 +4,7 @@ import Bottom from "@Components/Bottom";
 import AppLayout from "layout/layout";
 import Bottom2 from "@Components/Bottom2";
 import router from "next/router";
+import { Button } from "antd";
 
 const Home: NextPage = () => {
   console.log("in local log");
@@ -14,7 +15,7 @@ const Home: NextPage = () => {
 
   return (
     <AppLayout>
-      <button onClick={() => { router.push("/framerMotion") }}>Framer Motion</button>
+      <Button onClick={() => { router.push("/framerMotion") }}>Framer Motion</Button>
       <Top></Top>
       <Bottom></Bottom>
       <Bottom2></Bottom2>
