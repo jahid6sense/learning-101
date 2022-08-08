@@ -1,13 +1,18 @@
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
+import "../styles/globals.css";
 import * as Sentry from "@sentry/nextjs";
 import { Provider } from "react-redux";
 import store from "redux/store";
+<<<<<<< HEAD
 import Bugsnag from '@bugsnag/js'
 import CookieHelper from "helpers/CookieHelper";
 import AppLayout from "layout/layout";
 import 'antd/dist/antd.css';
 import '../pages/swapBtn/SwipeableButton.css';
+=======
+import {motion} from "framer-motion";
+>>>>>>> fe13da89199bf2722b2d1b293b6dba5a162e7f95
 
 // import rg4js from 'raygun4js';
 // var rg4js = require('raygun4js');
@@ -20,6 +25,7 @@ process.env.NODE_ENV === "production" &&
     tracesSampleRate: 1.0,
   });
 
+<<<<<<< HEAD
 
 //Bugsnag error handle tool
 process.env.NODE_ENV === "production" && Bugsnag.start({ apiKey: '58d5f4354679ea28acdc411c88525caf' })
@@ -39,10 +45,20 @@ process.env.NODE_ENV === "production" && Bugsnag.start({ apiKey: '58d5f4354679ea
 // });
 
 function MyApp({ Component, pageProps }: AppProps) {
+=======
+function MyApp({Component, pageProps, router}: AppProps) {
+>>>>>>> fe13da89199bf2722b2d1b293b6dba5a162e7f95
   return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
+    <motion.div
+      key={router.route}
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      transition={{duration: 0.5}}
+    >
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    </motion.div>
   );
 }
 
